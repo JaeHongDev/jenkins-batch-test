@@ -1,10 +1,14 @@
 // Jenkinsfile (Declarative Pipeline)
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'eclipse-temurin:17' } }
+    // what is any?
+    agent any
+
+    // pipeline start
     stages {
         stage('build') {
             steps {
+                sh 'echo "Hello World"'
                 sh 'java -version'
             }
         }
